@@ -1,6 +1,7 @@
 #elenco di persone con propri dati
 def carica_elenco(persone):
-    while True:
+    flag=True
+    while flag:
         persona=[]
         nome=input("nome:")
         cognome=input("cognome:")
@@ -11,8 +12,9 @@ def carica_elenco(persone):
         persona.append(datanascita)
         persona.append(sesso)
         persone.append(persona)
-        scelta=input("vuoi continuare 1:")
-        if scelta!="1":
+        scelta=input("vuoi uscire 1 si 2 no:")
+        if scelta=="1":
+            flag=False
             break
     return persone
 def stampa(elenco):
@@ -21,6 +23,6 @@ def stampa(elenco):
 def main():
     elenco=[]
     elenco=carica_elenco(elenco)
-    carica_elenco(elenco)
+    #carica_elenco(elenco)
     stampa(elenco)
 main()
