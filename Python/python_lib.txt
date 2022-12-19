@@ -1,0 +1,10 @@
+import numpy as np
+#pip install numpy
+import SciPy as sp
+#python -m pip install scipy
+import Matplotlib
+#python -m pip install -U matplotlib
+import NLTK
+#pip install --user -U nltk
+import TensorFlow
+#pip install tensorflow
