@@ -12,15 +12,15 @@ for x in range(0,5):
             pass
 for x in range(0,5):
     print(matrix[x][0],matrix[x][1],matrix[x][2],matrix[x][3],matrix[x][4])
-def somma_rige(matrix):
+def somma_righe(matrix):
 
     for x in range(0,5):
         somma[x]=matrix[x][0]+matrix[x][1]+matrix[x][2]+matrix[x][3]+matrix[x][4]
     return somma
-print(somma_rige(matrix))
+print(somma_righe(matrix),"somme righe")
 def somma_colonne(matrix):
 
     for x in range(0,5):
         somma[x]=matrix[0][x]+matrix[1][x]+matrix[2][x]+matrix[3][x]+matrix[4][x]
     return somma
-print(somma_colonne(matrix))
+print(somma_colonne(matrix),"somme colonne")
