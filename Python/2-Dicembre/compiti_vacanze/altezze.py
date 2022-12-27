@@ -30,4 +30,5 @@ while True:
 print(persone)
 x=input("altezza da ricercare")
 for item in persone:
-  if x=persone[]
+ # if x=persone[]
+ 0
