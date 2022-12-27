@@ -29,3 +29,4 @@ for key in telefono.keys():
 print('*'*45)
 for key in sorted(telefono.keys()):
     print(key,"->",telefono[key])
+print(telefono["marco"])
