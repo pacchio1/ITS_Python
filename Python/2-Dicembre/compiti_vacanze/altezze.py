@@ -28,3 +28,6 @@ while True:
   if scelta=='1':
     break
 print(persone)
+x=input("altezza da ricercare")
+for item in persone:
+  if x=persone[]
