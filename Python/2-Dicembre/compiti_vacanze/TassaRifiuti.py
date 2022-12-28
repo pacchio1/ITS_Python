@@ -1,9 +1,13 @@
+flag=False
 while True:
     try:
         categoria = int(input("categoria:"))
         n_famiglia = int(
             input("numero componenti di famiglia per box inserire 0:"))
+        if n_famiglia>3:
+            n_famiglia=3
         mq = float(input("metri quadrati:"))
+        flag=True
         break
     except:
         print("errore")
@@ -31,6 +35,8 @@ def calcolaTARI(categoria, n_famiglia, mq):
             try:
                 # tmq=['1.23764', '49.92488']
                 tmq = abitazioni[n_famiglia].split()
+
+
             except:
                 print("errore non presente nel registro")
             # print(tmq)
@@ -41,6 +47,8 @@ def calcolaTARI(categoria, n_famiglia, mq):
             try:
                 # tmq=['1.23764', '49.92488']
                 tmq = alloggi[n_famiglia].split()
+
+
             except:
                 print("errore non presente nel registro")
             # print(tmq)
@@ -55,8 +63,8 @@ def calcolaTARI(categoria, n_famiglia, mq):
     cinquepercento(tari)
     return tari
 
-
-tari = calcolaTARI(categoria, n_famiglia, mq)
-print("i dati inseriti sono:", categoria,
-      n_famiglia, mq, "per un totale di tari di:")
-print(tari)
+if flag==True:
+    tari = calcolaTARI(categoria, n_famiglia, mq)
+    print("i dati inseriti sono:", categoria,
+        n_famiglia, mq, "per un totale di tari di:")
+    print(tari)
