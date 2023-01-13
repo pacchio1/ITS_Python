@@ -14,8 +14,6 @@ conto = "{:<20}{:<8}{:<8}{:<8}{:<8}"
 def sconto(n, perc):
     return n-(n*(perc/100))
 
-# def indati():
-
 
 def stampaNS():
     i = 0
@@ -25,13 +23,13 @@ def stampaNS():
     while i < len(spesa):
         #print((spesa[i][0])+" "+(spesa[i][0])+" "+(spesa[i][0])+(spesa[i][0]))
         tmp = (spesa[i])
-        articolo=(tmp[0])
-        prezzo=(tmp[1])
-        quantita=(tmp[2])
-        ToT=(tmp[3])
+        articolo = (tmp[0])
+        prezzo = (tmp[1])
+        quantita = (tmp[2])
+        ToT = (tmp[3])
 
         txt = "{:.<13} {:<12} {:<12} {:<12}"
-        print(txt.format(articolo,prezzo,quantita,ToT))
+        print(txt.format(articolo, prezzo, quantita, ToT))
         i = i+1
 
 
@@ -43,15 +41,16 @@ def stampaSS():
     while i < len(spesa):
         aux = sconti_muti(i)
         tmp = (spesa[i])
-        articolo=(tmp[0])
-        prezzo=(tmp[1])
-        quantita=(tmp[2])
-        ToT=(tmp[3])
-        sconto_a=(aux)
-        sconto_a=ToT-sconto_a
+        articolo = (tmp[0])
+        prezzo = (tmp[1])
+        quantita = (tmp[2])
+        ToT = (tmp[3])
+        sconto_a = (aux)
+        sconto_a = ToT-sconto_a
         txt = "{:<13} {:<13} {:<13} {:<13} {:<13}"
-        print(txt.format(articolo,prezzo,quantita,ToT,sconto_a))
+        print(txt.format(articolo, prezzo, quantita, ToT, sconto_a))
         i = i+1
+
 
 def sconti_muti(i):
 
@@ -72,6 +71,8 @@ def sconti_muti(i):
     else:
         None
     return totale
+
+
 def sconti(i):
 
     totale = spesa[i][1]*spesa[i][2]
@@ -95,9 +96,10 @@ def sconti(i):
 
 def riordina_i():
     while True:
+        tmp=''
         tmp = input(
-            "stampa ordinata in base prezzo [b] stampa ordinata in base alla quantità [q]")
-        if tmp == 'b':
+            "stampa ordinata in base prezzo [p] stampa ordinata in base alla quantità [q]")
+        if tmp == 'p':
             tmp = 2
             break
         elif tmp == 'q':
@@ -154,16 +156,13 @@ while scelta != 0:
                 except:
                     print("errore")
                     break
-
         case '2':
             print("operazione", scelta)
             articoli()
-
         case '3':
             print("operazione", scelta)
             for i in range(0, len(spesa)):
                 sconti(i)
-
         case '4':
             print("operazione", scelta)
             stampaNS()
