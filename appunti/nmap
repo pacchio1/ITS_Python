@@ -1,0 +1,3 @@
+nmap -St <ip> -> tcp connect scan
+nmap -Ss <ip> -> tcp syn scan
+nmap -sU -F -v <ip> -> udp scan

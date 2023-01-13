@@ -11,3 +11,4 @@ for p in parole:
             print(key,'in dizionario',dizionario[key])
         else:
             print(p,'non nel dizionario')
+print('')
