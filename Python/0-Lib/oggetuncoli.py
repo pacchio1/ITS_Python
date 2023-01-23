@@ -22,6 +22,7 @@ def main():
     Delpiero=Atleta("alessandro","delpiero",175)
     Totti=Atleta("francesco","totti")
     print(Delpiero.getCognome(),Totti.getNome())
+    Totti.setAltezza=altezza
 
 
 
