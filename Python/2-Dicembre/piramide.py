@@ -14,3 +14,4 @@ while i < numero_blocchi:
     i = i+1
 
 print(h)
+input()
