@@ -13,26 +13,26 @@ Menu="""
 """
 scelta=-1
 while scelta!=0:
-    os.clear()
+    os.system("cls")
     print(Menu)
-    scelta=int(input(':'))
+    scelta=(input(':'))
     match scelta:
-        case 1:
+        case '1':
             print("operazione",scelta)
 
-        case 2:
+        case '2':
             print("operazione",scelta)
 
-        case 3:
+        case '3':
             print("operazione",scelta)
 
-        case 4:
+        case '4':
             print("operazione",scelta)
 
-        case 5:
+        case '5':
             print("operazione",scelta)
 
-        case 0:
+        case '0':
             break
         case _:
             print("input sbagliato")
