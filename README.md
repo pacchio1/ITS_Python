@@ -1,2 +1,2 @@
 # Pyton_its
-lavori in python richiesti da its Piemonte: Backend-system integrator
+python jobs required by its Piemonte(x course:Backend-system integrator)
