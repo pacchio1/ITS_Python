@@ -76,6 +76,10 @@ class GestioneProgetti(Persona):
             tot = tot+i.getcostoC(anno)
         return tot
 
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (GestioneProgetti.elencoPersone() == self.__elencoPersone() and GestioneProgetti.costiProgetto() == self.__costiProgetto())
+
 
 class TecnicoEleAut(Persona):
 
