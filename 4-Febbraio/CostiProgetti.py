@@ -35,6 +35,10 @@ class Persona(object):
     def Setannoassunzione(self, sex):
         self.__annoassunzione = sex
 
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
+
     @abstractmethod
     def getcostoC(anno):
         pass
@@ -102,6 +106,10 @@ class TecnicoEleAut(Persona):
         else:
             return TecnicoEleAut.costo * TecnicoEleAut.get_orelavorate()
 
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
+
 
 class TecnicoInfTe(Persona):
 
@@ -132,6 +140,10 @@ class TecnicoInfTe(Persona):
         else:
             return TecnicoInfTe.costo * TecnicoInfTe.get_orelavorate()
 
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
+
 
 class FunzionarioSenior(Persona):
 
@@ -152,6 +164,10 @@ class FunzionarioSenior(Persona):
 
     def getcostoC(self, anno):
         return FunzionarioSenior.costo + (anno-FunzionarioSenior.Getannoassunzione()) * FunzionarioSenior.get_orelavorate()
+
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
 
 
 class FunzionarioJunior(Persona):
@@ -174,6 +190,10 @@ class FunzionarioJunior(Persona):
     def getcostoC(self, anno):
         return FunzionarioJunior.costo + (anno-FunzionarioJunior.Getannoassunzione()) * FunzionarioJunior.get_orelavorate()
 
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
+
 
 class Dirigente(Persona):
 
@@ -194,3 +214,7 @@ class Dirigente(Persona):
 
     def getcostoC(self, anno):
         return Dirigente.costo + (anno-Dirigente.Getannoassunzione()) * Dirigente.get_orelavorate()
+
+    def __eq__(self, __o: object) -> bool:
+        if isinstance(self, Persona):
+            return (Persona.GetNome() == self.__nome and Persona.GetCognome() == self.__cognome and Persona.Getannoassunzione() == self.__annoassunzione)
