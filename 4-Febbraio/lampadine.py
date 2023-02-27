@@ -1,4 +1,6 @@
 import os
+
+
 class lampadina:
     def __init__(self):
         self.__accesa = False
@@ -19,6 +21,8 @@ class lampadina:
 
     def __str__(self) -> str:
         return "accesa= "+str(self.__accesa)+" rotta= "+str(self.__rotta)
+
+
 philips = lampadina()
 print(philips.__str__())
 ###### Marco Pacchiotti 016	######
