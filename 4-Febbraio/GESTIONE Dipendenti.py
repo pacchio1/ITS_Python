@@ -66,8 +66,8 @@ class docente(Dipendente):
 
 
 class GestioneDipendenti(Dipendente):
-    def __init__(self, nome, cognome, indirizo, sesso):
-        Dipendente().__init__(nome, cognome, indirizo, sesso)
+    def __init__(self):
+
         self.__elenco = []
 
     def get_elenco(self):
