@@ -25,9 +25,9 @@ print("I'm Monty Python.")
 
 # boolean
 g = 1
-print(g == 1)
 
-#operatori + (somma) - (sottrazione) * (motiplizazione) / (divisione)
+
+# operatori + (somma) - (sottrazione) * (motiplizazione) / (divisione)
 # // (divisione intera) % (modulo) (resto divisione intera) ** (esponinziazione)
 
 print(9/2, 9//2, 9 % 2, 9**2, sep='\t')
