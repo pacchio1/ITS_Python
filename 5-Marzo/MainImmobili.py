@@ -20,6 +20,8 @@ villa2 = ClassImmobili.Villa(
 villa1clone = ClassImmobili.Villa(
     6, 200, "via le mani dal naso", "Napoli", 2002, True, 2, True)
 scelta = -1
+gestione_mobili = ClassImmobili.GestioneImmobili()
+gestione_mobili.aggiungi_immobile((villa1, villa2, villa1clone))
 
 
 def CreaImmobile():
@@ -83,11 +85,11 @@ while scelta != 0:
 
         case '3':
             print("operazione", scelta)
-            elenco = ClassImmobili.GestioneImmobili.elenco()
+            elenco = gestione_mobili.elencoImmobili()
             print(elenco)
         case '4':
             print("operazione", scelta)
-
+            print(villa1.GetValoreImmobile())
         case '5':
             print("operazione", scelta)
 

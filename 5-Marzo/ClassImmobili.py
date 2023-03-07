@@ -12,7 +12,10 @@ class Immobile(ABC):
     """numero_stanze, superficie, indirizzo e la città, anno_costruzione."""
 
     def __str__(self):
-        return f"numero_stanze: {self.__numero_stanze} superficie: "+self.__superficie+" indirizzo", self.__indirizzo, "anno_costruzione" + str(self.__anno_costruzione), 'città:', self.__citta
+        st = f"numero_stanze: {self.__numero_stanze} superficie: "+self.__superficie + \
+            " indirizzo", self.__indirizzo, "anno_costruzione" + \
+            str(self.__anno_costruzione), 'città:', self.__citta
+        return st
 
     def GetIndirizzo(self) -> str:
         return self.__indirizzo
@@ -72,7 +75,7 @@ class Abitazione(Immobile):
         self.__cortile = cortile
 
     def GetValore(self):
-        self.__valore
+        return Abitazione.val
 
     def GetValoreImmobile(self):
         s = self.GetSuperficie()
@@ -116,7 +119,7 @@ class Villa(Immobile):
         self.__piscina = piscina
 
     def GetValore(self):
-        self.__valore
+        return Villa.val
 
     def GetValoreImmobile(self):
         s = self.GetSuperficie()
@@ -140,13 +143,13 @@ class Appartamento(Immobile):
         self.__indirizzo = n_piano
 
     def __str__(self):
-        return super().__str__()
+        return super().__str__(), self.__n_piano
 
     def __eq__(self, __o: object) -> bool:
         return super().__eq__(__o) and self.GetNPiano() == __o.GetNPiano()
 
     def GetValore(self):
-        self.__valore
+        return Appartamento.val
 
     def GetValoreImmobile(self):
         s = self.GetSuperficie()
@@ -154,30 +157,19 @@ class Appartamento(Immobile):
         return s*v
 
 
-class GestioneImmobili(Immobile):
+class GestioneImmobili(object):
 
-    def __init__(self, numero_stanze, superficie, indirizzo, citta, anno_costruzione):
-        super().__init__(numero_stanze, superficie, indirizzo, citta, anno_costruzione)
+    def __init__(self):
         self.__elenco = []
 
     def __str__(self):
         return super().__str__()
 
-    def elencoImmobili(self):
+    def aggiungi_immobile(self, immobile):
+        self.__elenco.append(immobile)
 
-        # elenco partecipanti al progetto
-        Immobili = ""
-        for p in self.__elenco:
-            Immobili += p.GetIndirizzo()+" "+p.GetCitta()+" "
-            # print(type(p))
-            if isinstance(p, Villa):
-                # +"\t\t\tCosto: "+str(p.getCostoC())
-                Immobili += " Villa "+p.GetValoreImmobile()
-            if isinstance(p, Abitazione):
-                Immobili += " Abitazione " + \
-                    p.GetValoreImmobile()  # +"\t\t\tCosto: "+str(p.getCostoC())
-            if isinstance(p, Appartamento):
-                Immobili += " Appartamento " + \
-                    p.GetValoreImmobile()  # +"\t\t\tCosto: "+str(p.getCostoC())
-            Immobili += "\r\n"
-        return Immobili
+    def elencoImmobili(self) -> str:
+        a = ""
+        for im in self.__elenco:
+            print(im)
+        return a
