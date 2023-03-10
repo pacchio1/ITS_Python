@@ -114,6 +114,15 @@ while scelta != 0:
             print(elenco)
         case '4':
             print("operazione", scelta)
+            gestione_mobili.elencoImmobili()
+            while True:
+                try:
+                    a = input("immobile 1:")
+                    b = input("immobile 2:")
+                    break
+                except:
+                    print("errore")
+                    imm1 = gestione_mobili.cercaImmobile(int(a))
 
         case '5':
             print("operazione", scelta)
