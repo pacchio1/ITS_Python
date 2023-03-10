@@ -19,9 +19,22 @@ villa2 = ClassImmobili.Villa(
     5, 220, "via dalle palle", "Cuneo", 2005, False, 1, False)
 villa1clone = ClassImmobili.Villa(
     6, 200, "via le mani dal naso", "Napoli", 2002, True, 2, True)
+
+abitazione1 = ClassImmobili.Abitazione(
+    3, 100, "Via Roma 1", "Roma", 1950, True)
+villa1 = ClassImmobili.Villa(
+    6, 200, "Via dei Giardini 2", "Milano", 1980, True, 2, True)
+appartamento1 = ClassImmobili.Appartamento(
+    2, 50, "Corso Italia 10", "Torino", 2000, 3)
+
 scelta = -1
 gestione_mobili = ClassImmobili.GestioneImmobili()
-gestione_mobili.aggiungi_immobile((villa1, villa2, villa1clone))
+gestione_mobili.aggiungi_immobile(villa1)
+gestione_mobili.aggiungi_immobile(villa1clone)
+gestione_mobili.aggiungi_immobile(villa2)
+gestione_mobili.aggiungi_immobile(abitazione1)
+gestione_mobili.aggiungi_immobile(villa1)
+gestione_mobili.aggiungi_immobile(appartamento1)
 
 
 def CreaImmobile():
@@ -64,6 +77,23 @@ def CreaImmobile():
             print(menu)
 
 
+def comparaImmobili(gestione_mobili):
+    gestione_mobili.elencoImmobili()
+    while True:
+        try:
+            a = input("immobile 1:")
+            b = input("immobile 2:")
+            break
+        except:
+            print("errore")
+            imm1 = gestione_mobili.cercaImmobile(int(a))
+            imm2 = gestione_mobili.cercaImmobile(int(b))
+            if imm1 == imm2:
+                print("gli imobili sono uguali")
+            else:
+                print("gli imobili non sono uguali")
+
+
 while scelta != 0:
     os.system("cls")
     print(menu)
@@ -76,12 +106,7 @@ while scelta != 0:
             print("operazione", scelta)
             print(
                 "Compara due immobili")
-            if villa1 == villa1clone:
-                print("eq funziona")
-            if villa1 != villa2:
-                print("eq funziona")
-            else:
-                print("eq non funziona")
+            comparaImmobili(gestione_mobili)
 
         case '3':
             print("operazione", scelta)
@@ -89,7 +114,7 @@ while scelta != 0:
             print(elenco)
         case '4':
             print("operazione", scelta)
-            print(villa1.GetValoreImmobile())
+
         case '5':
             print("operazione", scelta)
 

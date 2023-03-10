@@ -12,9 +12,7 @@ class Immobile(ABC):
     """numero_stanze, superficie, indirizzo e la città, anno_costruzione."""
 
     def __str__(self):
-        st = f"numero_stanze: {self.__numero_stanze} superficie: "+self.__superficie + \
-            " indirizzo", self.__indirizzo, "anno_costruzione" + \
-            str(self.__anno_costruzione), 'città:', self.__citta
+        st = f"numero_stanze: {self.__numero_stanze} superficie: {self.__superficie} indirizzo, {self.__indirizzo} anno_costruzione {str(self.__anno_costruzione)},città:, {self.__citta}"
         return st
 
     def GetIndirizzo(self) -> str:
@@ -127,6 +125,11 @@ class Villa(Immobile):
         return s*v
 
 
+"""villa1clone = Villa(
+    6, 200, "via le mani dal naso", "Napoli", 2002, True, 2, True)
+print(villa1clone)"""
+
+
 class Appartamento(Immobile):
     val = 1750
 
@@ -143,7 +146,7 @@ class Appartamento(Immobile):
         self.__indirizzo = n_piano
 
     def __str__(self):
-        return super().__str__(), self.__n_piano
+        return super().__str__() + str(self.__n_piano)
 
     def __eq__(self, __o: object) -> bool:
         return super().__eq__(__o) and self.GetNPiano() == __o.GetNPiano()
@@ -163,13 +166,14 @@ class GestioneImmobili(object):
         self.__elenco = []
 
     def __str__(self):
-        return super().__str__()
+        super().__str__()
 
     def aggiungi_immobile(self, immobile):
         self.__elenco.append(immobile)
 
     def elencoImmobili(self) -> str:
-        a = ""
-        for im in self.__elenco:
-            print(im)
-        return a
+        for i, im in enumerate(self.__elenco):
+            print(f"{i+1}   {im}")
+
+    def cercaImmobile(self, num):
+        return self.__elenco[num-1]
