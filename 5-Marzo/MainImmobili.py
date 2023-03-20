@@ -118,11 +118,12 @@ while scelta != 0:
             while True:
                 try:
                     a = input("immobile 1:")
-                    b = input("immobile 2:")
+
                     break
                 except:
                     print("errore")
                     imm1 = gestione_mobili.cercaImmobile(int(a))
+                    print(ClassImmobili.GestioneImmobili.valoreImmobile(imm1))
 
         case '5':
             print("operazione", scelta)
