@@ -2,3 +2,4 @@
 .dccache
 .dccache
 from_other
+*/__pycache__
