@@ -177,3 +177,8 @@ class GestioneImmobili(object):
 
     def cercaImmobile(self, num):
         return self.__elenco[num-1]
+    def valoreImmobile(self, immobile_in):
+        for im in self.__elenco:
+            if im==immobile_in:
+                return isinstance(im)
+        
